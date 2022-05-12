@@ -7,9 +7,9 @@ output "vpc_public_subnets" {
 }
 
 output "jenkins_ids" {
-   value = ["${aws_instance.webserver.*.id}"]
+   value = ["${aws_instance.jenkins.*.id}"]
 }
 
 output "ip_addresses" {
-   value = ["${aws_instance.webserver.*.id}"]
+   value = ["${aws_instance.jenkins.*.id}"]
 }
