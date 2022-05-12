@@ -1,9 +1,9 @@
 provider "aws" {
 
   region     = "us-east-1"
-  access_key = "ASIA5OAWNTOSRYWAD5VB"
-  secret_key = "7NWKWKGLy1Upj36NzeJZRHjhrlv3IyXcTjDRZWfB"
-  token = ""
+  access_key = "ASIA5OAWNTOSUJNFV7D7"
+  secret_key = "VyQQvojqSoltbz0cJ1PF3hxQ+rHZfREEqROqTN0A"
+  token = "FwoGZXIvYXdzEHsaDA7GBcJhpt6o2m4rsCK1AcdahzmnIds2EJxPu3TgzNlDQlX1+6RlVxa4EA09cuiQudapCvZ9caN/agc6785vH3+ktL6XjBQ1ThyDFG+xiEdyaz9+ss1Jek7BNsDxx5oaCrnRPnCEZ7cfdhBN+2/QJoMHUqwWw19akhjVk2/5iPi6Vfxx+ickx+YXQ/twVTeR2+BrFH9GU5HPnvceADkgkxu2ueOMLs/b6Dxz12sP6U1RAY/wqLb3LzdACqukDEedqAVdjSQo5rDzkwYyLeSiXHt3PBi5hMcv4PKHzHgWQkupFGhReNd6ebrDKBqQbBbIJ44cnJ7ftml4ew=="
 }
 
 variable "generated_key_name" {
