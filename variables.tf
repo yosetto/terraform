@@ -32,12 +32,12 @@ variable "instance_type" {
 
 variable "public_key_path" {
    description = "Path to the SSH Public Key to add to AWS."
-   default     = "~/.ssh/terraform-key-pair.pem"
+   default     = "tf-key-pair.pem"
 }
 
 variable "key_name" {
    description = "AWS key name"
-   default     = "terraform-key-pair"
+   default     = "tf-key-pair"
 }
 
 variable "instance_count" {
