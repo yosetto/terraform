@@ -37,11 +37,29 @@ resource "aws_security_group" "allow_ports" {
    }
 }
 
+resource "tls_private_key" "dev_key" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+resource "aws_key_pair" "generated_key" {
+  key_name   = var.generated_key_name
+  public_key = tls_private_key.dev_key.public_key_openssh
+
+  provisioner "local-exec" {    # Generate "terraform-key-pair.pem"
+    command = "echo '${tls_private_key.dev_key.private_key_pem}' > ./'${var.generated_key_name}'.pem"
+  }
+
+  provisioner "local-exec" {
+    command = "chmod 400 ./'${var.generated_key_name}'.pem"
+  }
+}
+
 resource "aws_instance" "jenkins" {
    instance_type          = "${var.instance_type}"
    ami                    = "${lookup(var.aws_amis, var.aws_region)}"
    count                  = "${var.instance_count}"
-   key_name               = "${var.key_name}"
+   key_name               = aws_key_pair.generated_key.key_name
    vpc_security_group_ids = ["${aws_security_group.allow_ports.id}"]
    subnet_id              = "${element(module.vpc.public_subnets,count.index)}"
    user_data              = "${file("scripts/init.sh")}"
