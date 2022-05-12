@@ -13,7 +13,7 @@ variable "aws_secret_key" {
    default = "VyQQvojqSoltbz0cJ1PF3hxQ+rHZfREEqROqTN0A"
 }
 
-variable "aws_token" {
+variable "aws_api_token" {
    description = "AWS API Token"
    default = "FwoGZXIvYXdzEHsaDA7GBcJhpt6o2m4rsCK1AcdahzmnIds2EJxPu3TgzNlDQlX1+6RlVxa4EA09cuiQudapCvZ9caN/agc6785vH3+ktL6XjBQ1ThyDFG+xiEdyaz9+ss1Jek7BNsDxx5oaCrnRPnCEZ7cfdhBN+2/QJoMHUqwWw19akhjVk2/5iPi6Vfxx+ickx+YXQ/twVTeR2+BrFH9GU5HPnvceADkgkxu2ueOMLs/b6Dxz12sP6U1RAY/wqLb3LzdACqukDEedqAVdjSQo5rDzkwYyLeSiXHt3PBi5hMcv4PKHzHgWQkupFGhReNd6ebrDKBqQbBbIJ44cnJ7ftml4ew=="
 }
