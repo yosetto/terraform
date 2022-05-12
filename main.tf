@@ -35,10 +35,6 @@ resource "aws_security_group" "allow_ports" {
        protocol    = "-1"
        cidr_blocks = ["0.0.0.0/0"]
    }
-  
-   tags {
-       Name = "Allow SSH and HTTP"
-   }
 }
 
 resource "aws_instance" "jenkins" {
@@ -49,8 +45,5 @@ resource "aws_instance" "jenkins" {
    vpc_security_group_ids = ["${aws_security_group.allow_ports.id}"]
    subnet_id              = "${element(module.vpc.public_subnets,count.index)}"
    user_data              = "${file("scripts/init.sh")}"
-  
-   tags {
-       Name = "Jenkins"
-   }
+
 }
