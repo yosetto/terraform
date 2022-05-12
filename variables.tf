@@ -31,8 +31,8 @@ variable "instance_type" {
 }
 
 variable "public_key_path" {
-   description = "Enter the path to the SSH Public Key to add to AWS."
-   default     = "~/.ssh/yourkey.pem"
+   description = "Path to the SSH Public Key to add to AWS."
+   default     = "~/.ssh/terraform-key-pair.pem"
 }
 
 variable "key_name" {
