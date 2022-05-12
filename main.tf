@@ -40,3 +40,17 @@ resource "aws_security_group" "allow_ports" {
        Name = "Allow SSH and HTTP"
    }
 }
+
+resource "aws_instance" "jenkins" {
+   instance_type          = "${var.instance_type}"
+   ami                    = "${lookup(var.aws_amis, var.aws_region)}"
+   count                  = "${var.instance_count}"
+   key_name               = "${var.key_name}"
+   vpc_security_group_ids = ["${aws_security_group.allow_ports.id}"]
+   subnet_id              = "${element(module.vpc.public_subnets,count.index)}"
+   user_data              = "${file("scripts/init.sh")}"
+  
+   tags {
+       Name = "Jenkins"
+   }
+}
