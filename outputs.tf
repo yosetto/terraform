@@ -6,7 +6,7 @@ output "vpc_public_subnets" {
    value = ["${module.vpc.public_subnets}"]
 }
 
-output "webserver_ids" {
+output "jenkins_ids" {
    value = ["${aws_instance.webserver.*.id}"]
 }
 
